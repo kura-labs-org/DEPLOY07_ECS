@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-                sh 'docker build -t javadem .'
+                sh 'docker build -t syip11/javadem .'
                 sh 'echo "completed build"'
             }
         }
@@ -23,7 +23,7 @@ pipeline {
         
         stage('Push'){
             steps {
-                sh 'docker push javadem:latest'
+                sh 'docker push syip11/javadem:latest'
                 sh 'echo "completed push"'
             }
         }
