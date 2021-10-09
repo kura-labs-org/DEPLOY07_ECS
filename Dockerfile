@@ -1,9 +1,3 @@
 FROM openjdk:11
-
-WORKDIR / 
-
-COPY demo-0.0.1-SNAPSHOT.jar .
-
-EXPOSE 8080
-
-CMD java -jar demo-0.0.1-SNAPSHOT.jar
+COPY ./demo-0.0.1-SNAPSHOT.jar app.jar
+CMD ["java","-jar","app.jar"]
