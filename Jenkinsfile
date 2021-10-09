@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "your label"}
+    agent { label "agent1"}
     
     environment{
         DOCKERHUB_CREDENTIALS_USR = "kiswong"
