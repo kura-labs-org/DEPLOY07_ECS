@@ -4,8 +4,8 @@ pipeline {
     }
     
   environment {
-    DOCKERHUB_CREDENTIALS = credentials(rixardo-dockerhub)
-    }
+    DOCKERHUB_CREDENTIALS = credentials("rixardo-dockerhub")
+}
     stages {
         stage('Build') { 
             steps { 
