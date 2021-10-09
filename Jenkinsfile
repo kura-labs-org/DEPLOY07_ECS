@@ -2,6 +2,7 @@ pipeline {
     agent { label "your label"}
     
     environment{
+        DOCKERHUB_CREDENTIALS_USR = "kiswong"
         DOCKERHUB_CREDENTIALS = credentials(“your username”-dockerhub')
     }
     stages {
