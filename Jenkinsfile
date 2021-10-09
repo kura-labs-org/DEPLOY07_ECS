@@ -5,7 +5,7 @@ pipeline {
     
   environment {
     DOCKERHUB_CREDENTIALS = credentials(rixardo-dockerhub)
-  }
+    }
     stages {
         stage('Build') { 
             steps { 
@@ -13,7 +13,7 @@ pipeline {
                 sh 'echo "completed build"'
             }
         }
-      
+
     stages {
         stage('Login') { 
             steps { 
@@ -28,4 +28,5 @@ pipeline {
             }
         }
     }
+}
 }
