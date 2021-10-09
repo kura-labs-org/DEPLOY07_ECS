@@ -21,7 +21,7 @@ pipeline {
         stage ('Push') {
             steps {
                 sh 'docker tag javaimage:latest kiswong:javaapp'
-                sh 'docker push kiswong:javaapp:latest'
+                sh 'docker push kiswong/javaapp:latest'
                 
             }
         }
