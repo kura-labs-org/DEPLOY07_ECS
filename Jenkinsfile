@@ -2,8 +2,8 @@ pipeline {
     agent { label "agent1"}
     
     environment{
-        DOCKERHUB_CREDENTIALS_USR = "kiswong"
-        DOCKERHUB_CREDENTIALS_PSW = "57ea28d3-588e-434e-b494-33ec4c2d9a67"
+        DOCKERHUB_CREDENTIALS_USR = ##input credentials
+        DOCKERHUB_CREDENTIALS_PSW = ##input credentials
     }
     stages {
         stage ('Build') {
