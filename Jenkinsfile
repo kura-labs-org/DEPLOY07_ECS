@@ -17,7 +17,7 @@ $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 }
 stage ('Push') {
 steps {
-sh 'docker .......'
+sh 'docker push demo'
 }
 }
 }
