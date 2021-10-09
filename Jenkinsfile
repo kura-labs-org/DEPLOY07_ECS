@@ -3,7 +3,7 @@ ipeline {
     
     environment{
         DOCKERHUB_CREDENTIALS_USR = "didi17"
-        DOCKERHUB_CREDENTIALS = "f38b02d1-d420-4879-909a-64c7b7724268"
+        DOCKERHUB_CREDENTIALS_PSW = "f38b02d1-d420-4879-909a-64c7b7724268"
     }
     stages {
         stage ('Build') {
