@@ -1,4 +1,4 @@
-# DEPLOY7_ECS
+# DEPLOY07_ECS
 <h1 align=center>Deployment 7</h1>
 
 Welcome to deployment 7, for this deployment you will need to follow directions in the deployment7.pdf.   
