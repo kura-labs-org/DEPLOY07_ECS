@@ -20,7 +20,8 @@ pipeline {
         }
         stage ('Push') {
             steps {
-                sh 'docker .......'
+                sh 'docker tag javaimage:latest kiswong:javaapp'
+                sh 'docker push kiswong:javaapp:latest'
                 
             }
         }
