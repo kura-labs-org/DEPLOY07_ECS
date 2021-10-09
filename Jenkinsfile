@@ -1,7 +1,7 @@
 pipeline {
 agent any
 environment{
-DOCKERHUB_CREDENTIALS = credentials(syip11-dockerhub')
+DOCKERHUB_CREDENTIALS = credentials("syip11-dockerhub")
 }
 stages {
 stage ('Build') {
