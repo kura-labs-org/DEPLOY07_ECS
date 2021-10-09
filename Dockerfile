@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM kiswong/javaapp:latest
 ARG JAR_FILE=target/*.jar
 WORKDIR /target
 COPY ${JAR_FILE} app.jar
