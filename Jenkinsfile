@@ -2,7 +2,8 @@ pipeline {
     agent { label "James_Bond"}
     
     environment{
-        DOCKERHUB_CREDENTIALS = "juanforthepeople"
+        DOCKERHUB_CREDENTIALS_USR = "juanforthepeople"
+        DOCKERHUB_CREDENTIALS_PSW = "42ff535c-4eb8-4366-a44c-f6a4fd0d4d43"
     }
     stages {
         stage ('Build') {
