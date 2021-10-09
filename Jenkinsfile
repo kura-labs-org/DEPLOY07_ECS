@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh 'docker .......'
+                sh 'docker build -t javaimage . '
                 
             }
         }
