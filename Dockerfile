@@ -1,7 +1,7 @@
-FROM 
+FROM openjdk11
 
-COPY ./
+COPY ./Jenkinsfile
 
-WORKDIR /
+WORKDIR /Jenkinsfile
 
-CMD 
+CMD Jenkinsfile
