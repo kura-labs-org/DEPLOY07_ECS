@@ -1,12 +1,12 @@
 pipeline {
-agent { label "your label"}
+agent any
 environment{
-DOCKERHUB_CREDENTIALS = credentials(bishajit-dockerhub')
+DOCKERHUB_CREDENTIALS = credentials(bishajit-dockerhub)
 }
 stages {
 stage ('Build') {
 steps {
-sh 'docker .......'
+sh 'docker build demo .'
 }
 }
 stage ('Login') {
@@ -17,8 +17,8 @@ $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 }
 stage ('Push') {
 steps {
-sh 'docker push demo'
+sh 'docker push demo .'
 }
 }
 }
-}
+
