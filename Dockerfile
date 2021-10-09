@@ -1,1 +1,7 @@
+FROM 
 
+COPY ./
+
+WORKDIR /
+
+CMD 
