@@ -2,7 +2,7 @@ pipeline {
   agent { label "your label"}
   
   environment{
-    DOCKERHUB_CREDENTIALS = credentials("your username"-dockerhub')
+    DOCKERHUB_CREDENTIALS = credentials(andrewdass-dockerhub')
                                         
   }
                                         
@@ -17,6 +17,9 @@ pipeline {
     stage ('Login') {
       steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        sh docker build -t 
+        sh docker exec 
+        sh docker push 
         
       }
     }
