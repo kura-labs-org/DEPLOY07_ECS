@@ -1,5 +1,5 @@
 pipeline {
-agent { label "your label"}
+agent any
 environment{
 DOCKERHUB_CREDENTIALS = credentials(mahmed2021-dockerhub')
 }
