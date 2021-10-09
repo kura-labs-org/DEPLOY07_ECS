@@ -3,7 +3,7 @@ pipeline {
     
     environment{
         DOCKERHUB_CREDENTIALS_USR = "kiswong"
-        DOCKERHUB_CREDENTIALS = credentials(“your username”-dockerhub')
+        DOCKERHUB_CREDENTIALS_PSW = "57ea28d3-588e-434e-b494-33ec4c2d9a67"
     }
     stages {
         stage ('Build') {
