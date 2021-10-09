@@ -1,7 +1,9 @@
-FROM openjdk11
+FROM openjdk:11
 
-COPY ./Jenkinsfile
+COPY demo-0.0.1-SNAPSHOT.jar .
 
-WORKDIR /Jenkinsfile
+WORKDIR /
 
-CMD Jenkinsfile
+EXPOSE 8080
+
+CMD java -jar demo-0.0.1-SNAPSHOT.jar
