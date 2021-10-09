@@ -10,9 +10,9 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh '
+                sh '''
                 docker build -t zachcyrus/spring-app .
-                '
+                '''
             }
         }
 
@@ -26,7 +26,7 @@ pipeline {
 
             steps{
 
-                sh 'docker push zachcyrus/spring-app:latest
+                sh 'docker push zachcyrus/spring-app:latest'
 
             }
             
