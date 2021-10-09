@@ -1,24 +1,31 @@
 pipeline {
-agent any
-environment{
-DOCKERHUB_CREDENTIALS = credentials("syip11-dockerhub")
+    agent {
+        label "agent1"
+    }
+    
+  environment {
+    DOCKERHUB_CREDENTIALS = credentials("syip11-dockerhub")
 }
-stages {
-stage ('Build') {
-steps {
-sh 'docker build -t demo .'
-}
-}
-stage ('Login') {
-steps {
-sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u
-$DOCKERHUB_CREDENTIALS_USR --password-stdin'
-}
-}
-stage ('Push') {
-steps {
-sh 'docker push demo:latest'
-}
-}
-}
+    stages {
+        stage('Build') { 
+            steps { 
+                sh 'docker build -t demo .'
+                sh 'echo "completed build"'
+            }
+        }
+    
+        stage('Login') { 
+            steps { 
+              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+              sh 'echo "completed login"'
+            }
+        }
+        
+        stage('Push'){
+            steps {
+                sh 'docker push demo:latest'
+                sh 'echo "completed push"'
+            }
+        }
+    }
 }
