@@ -6,7 +6,7 @@ DOCKERHUB_CREDENTIALS = credentials(mahmed2021-dockerhub')
 stages {
 stage ('Build') {
 steps {
-sh 'docker '
+sh 'docker build -t demo .'
 }
 }
 stage ('Login') {
@@ -16,7 +16,7 @@ $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 }}
 stage ('Push') {
 steps {
-sh 'docker .......'
+sh 'docker push demo .'
 }
 }
 }
