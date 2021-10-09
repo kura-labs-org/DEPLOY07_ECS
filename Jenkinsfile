@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label "enter label"
+        label "Ubuntu"
     }
 
     environment {
