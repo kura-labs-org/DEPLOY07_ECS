@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "your label"}
+    agent { label "agent-ubuntu"}
 
     environment{
         DOCKERHUB_CREDENTIALS = credentials('bjones25-dockerhub')
