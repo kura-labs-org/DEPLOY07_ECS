@@ -3,9 +3,10 @@ pipeline {
         label "jenkins-agent"
     }
     
-  environment {
-    DOCKERHUB_CREDENTIALS = credentials("rixardo-dockerhub")
-}
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials("rixardo-dockerhub")
+    }
+    
     stages {
         stage('Build') { 
             steps { 
@@ -16,11 +17,11 @@ pipeline {
     
         stage('Login') { 
             steps { 
-              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-              sh 'echo "completed login"'
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                sh 'echo "completed login"'
             }
         }
-        
+
         stage('Push'){
             steps {
                 sh 'docker push rixardo/deploy07:latest'
