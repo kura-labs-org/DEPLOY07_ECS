@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label "ubuntuagent1"
+        label "agent1"
     }
     
   environment {
