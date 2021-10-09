@@ -1,12 +1,12 @@
 pipeline {
 agent { label "your label"}
 environment{
-DOCKERHUB_CREDENTIALS = credentials(“your username”-dockerhub')
+DOCKERHUB_CREDENTIALS = credentials(syip11-dockerhub')
 }
 stages {
 stage ('Build') {
 steps {
-sh 'docker .......'
+sh 'docker build demo .'
 }
 }
 stage ('Login') {
@@ -17,7 +17,7 @@ $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 }
 stage ('Push') {
 steps {
-sh 'docker .......'
+sh 'docker push demo .'
 }
 }
 }
