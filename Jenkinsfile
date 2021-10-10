@@ -11,7 +11,7 @@ sh 'docker build demo .'
 }
 stage ('Login') {
 steps {
-sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u
+sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login 
 $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 }
 }
