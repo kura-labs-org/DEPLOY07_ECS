@@ -8,7 +8,7 @@ environment {
     stages {
           stage ('Build') {
               steps {
-                  sh 'docker .......'
+                  sh 'docker build -t bishajit/jenkins'
                 }
               }
       
@@ -20,7 +20,7 @@ environment {
 
               stage ('Push') {
                    steps {
-                      sh 'docker .......'
+                      sh 'docker push bishajit/jenkins:latest'
           }
        }
     }
