@@ -1,5 +1,5 @@
 pipeline {
-agent any
+  agent {label 'docker-aws'}
 environment{
 DOCKERHUB_CREDENTIALS = credentials('mahmed2021-dockerhub')
 }
