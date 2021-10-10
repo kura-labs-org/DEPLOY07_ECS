@@ -2,7 +2,7 @@ pipeline {
     agent { label "agent1"}
 
 environment{
-    DOCKERHUB_CREDENTIALS = credentials(“bishajit ”-dockerhub')
+    DOCKERHUB_CREDENTIALS = credentials(“bishajit-dockerhub")
 }
     stages {
           stage ('Build') {
