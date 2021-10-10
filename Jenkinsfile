@@ -2,13 +2,12 @@ pipeline {
     agent { label "Docker"}
     
     environment{
-        DOCKERHUB_CREDENTIALS_USR = "iancdmitchell"
-        DOCKERHUB_CREDENTIALS = "86b835bf-7eec-4ff9-a14e-ec9621b25029"
+         DOCKERHUB_CREDENTIALS = credentials("docker-credentials")
     }
     stages {
         stage ('Build') {
             steps {
-                sh 'docker build -t javaimage .'
+                sh 'docker build -t javaimage ./demo'
                 
             }
         }
@@ -20,8 +19,8 @@ pipeline {
         }
         stage ('Push') {
             steps {
-                sh 'docker tag javaimage:latest imitchell:javaapp'
-                sh 'docker push imitchell:javaapp:latest'
+                sh 'docker tag javaimage:latest iancdmitchell/javaapp:latest'
+                sh 'docker push iancdmitchell/javaapp:latest'
                 
             }
         }
