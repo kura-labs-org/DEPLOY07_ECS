@@ -19,6 +19,7 @@ pipeline {
         sh '''
         var1=$( sudo docker images --filter 'dangling=true' --format "{{.ID}}" )
         sudo docker tag $var1 deploy7
+        sudo docker push deploy7
         '''
       }
     }
