@@ -19,7 +19,7 @@ pipeline {
         sh '''
         var1=$( sudo docker images --filter 'dangling=true' --format "{{.ID}}" )
         sudo docker tag $var1 deploy7
-        echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin
+        sudo docker login -u kentan404
         sudo docker push deploy7
         '''
       }
