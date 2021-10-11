@@ -44,6 +44,7 @@ Set up a dockerhub account as well as a github repository that have the Dockerfi
 
 1) Dockerhub will have a credentials in the Jenkinsfile. Have Dockerhub create a personal token for use with the account repository.
 2) This can be placed in the git repo, but a better option is to create an [environment variable](https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-set-environment-variables-in-linux/) in the EC2 that the Jenkinsfile can reference. This is safer and a better alternative to exposing the key directly.
+3) This is also an alternative [credential option](https://appfleet.com/blog/building-docker-images-to-docker-hub-using-jenkins-pipelines/).
 
 <h2>ECS</h2>
 
