@@ -22,6 +22,7 @@ ECR Utilized to host a jenkins image for use for ECS so that multiple orchestrat
 ECS utilized as a container cluster service to faciliate building through github pulls of the Jenkinsfile and Dockerfile
 
 <h1>Steps:</h2>
+
 <h2>Prior</h2>
 For this deployment we will be reusing a previous class's docker image that was provided by instructure to build into a a docker imge for deployment. This java application is a java web app that uses Springboot. This means that maven or something similar must be used to compile and then made into an image. The steps taken here will not be discussed, but a simplified way discussing what was done to the image prior, which created the target folder was the use of a maven image that was dockerized to target and compile the java files with pom.xl to a jar. We will be using that target folder created as our target for the Dockerfile.
 
