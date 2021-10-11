@@ -28,8 +28,8 @@ For this deployment we will be reusing a previous class's docker image that was 
 Set up a dockerhub account as well as a github repository that have the Dockerfile and Jenkinsfile with the configurations that are in the current repository.
 
 <h2>EC2:</h2>
-1) Set up EC2 with Ubuntu on a VPC and remember the subnet (we'll call this subnet a).
-2) Set SG here to allow SSH anywhere. For testing, this is fine, for production, this should be set to private with allowed outbound through an internet gateway.
+1) Set up EC2 with Ubuntu on a VPC and remember the subnet (we'll call this subnet a.
+2) 2) Set SG here to allow SSH anywhere. For testing, this is fine, for production, this should be set to private with allowed outbound through an internet gateway.
 3) Bootstrap an update and upgrade command, followed by adding repo for [Docker Engine](https://docs.docker.com/engine/install/ubuntu/).
 4) Add current user to Docker group to reduce need for sudo before every docker command.
 5) Check docker installed using docker --version
