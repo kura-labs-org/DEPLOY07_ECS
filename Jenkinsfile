@@ -16,7 +16,10 @@ pipeline {
     }
     stage ('Push') {
       steps {
-        sh 'echo filler '
+        sh '''
+        var1=$( sudo docker images --filter 'dangling=true' --format "{{.ID}}" )
+        sudo docker tag $var1 deploy7
+        '''
       }
     }
   }
