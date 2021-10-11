@@ -37,6 +37,7 @@ Set up a dockerhub account as well as a github repository that have the Dockerfi
 7) Download [AWSCLI2](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html). (This is important)
 8) Set up AWSCLI2 with credentials for AWSCLI. This is located in IAM -->User -->Security Credentials Tab.
 9) Run `docker pull jenkins/jenkins`
+10) 
 
 <h2>ECS</h2>
 1) Using EC2 
