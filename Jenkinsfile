@@ -21,6 +21,7 @@ pipeline {
         var1=$( docker images --filter 'dangling=true' --format "{{.ID}}" )
         docker tag $var1 kentan404/deploy7repo:deploy7repo
         docker push kentan404/deploy7repo:deploy7repo
+        docker image prune -a -y
         '''
       }
     }
