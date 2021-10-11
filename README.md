@@ -59,4 +59,4 @@ Set up a dockerhub account as well as a github repository that have the Dockerfi
 10) Create a mulitbranch pipeline with Github credentials and default on all settings.
 11) Let Jenkins scan the repo, then build now.
 
-![image](https://github.com/kawangwong/DEPLOY07_ECS/blob/main/Topology%20Design.drawio.png)
+![image](https://github.com/kawangwong/DEPLOY07_ECS/blob/main/Topology%20Design.png)
