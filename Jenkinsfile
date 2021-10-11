@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh 'sudo docker buildx build --platform linux/amd64 -t java .'
+                sh 'sudo docker build -t java .'
             }
         }
         stage ('Login') {
