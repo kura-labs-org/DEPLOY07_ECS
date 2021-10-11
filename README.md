@@ -31,16 +31,30 @@ Set up a dockerhub account as well as a github repository that have the Dockerfi
 <h2>EC2:</h2>
 
 1) Set up EC2 with Ubuntu on a VPC and remember the subnet (we'll call this subnet a.
-2) 2) Set SG here to allow SSH anywhere. For testing, this is fine, for production, this should be set to private with allowed outbound through an internet gateway.
-3) Bootstrap an update and upgrade command, followed by adding repo for [Docker Engine](https://docs.docker.com/engine/install/ubuntu/).
+2) Set SG here to allow SSH anywhere. We left this here for simplification, but we could also set it to allow for specific IPs for the ECS later if it's desired. For testing, this is fine, for production, this should be set to private with allowed outbound through an internet gateway.
+3) Bootstrap an update and upgrade command, then add the necessary programs needed for https and ca-certificate followed by adding repo for [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) and then updating and install for docker.
 4) Add current user to Docker group to reduce need for sudo before every docker command.
 5) Check docker installed using docker --version
 6) Install Java jdk through default-jre package. (This is to allow Jenkins Agent to be used)
 7) Download [AWSCLI2](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html). (This is important)
 8) Set up AWSCLI2 with credentials for AWSCLI. This is located in IAM -->User -->Security Credentials Tab.
-9) Run `docker pull jenkins/jenkins`
-10) 
+9) Run `docker pull jenkins/jenkins` on EC2
+
+<h2>Dockerhub</h2>
+
+1) Dockerhub will have a credentials in the Jenkinsfile. Have Dockerhub create a personal token for use with the account repository.
+2) This can be placed in the git repo, but a better option is to create an [environment variable](https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-set-environment-variables-in-linux/) in the EC2 that the Jenkinsfile can reference. This is safer and a better alternative to exposing the key directly.
 
 <h2>ECS</h2>
+
 1) Using EC2 
 2) Go into your AWS Account for ECR. Set up a private ECR.
+3) Follow the instructions on how to log in, how to tag, and how to push the image to the ECR. You may skip the build command since we are using the image as is.
+4) Create an ECS cluster on default. Create a Task Definition. Create A New Task. To understand what is going on. The short answer is you're creating parameters of groups and subgroups that will define what your intents are for the services such as processing power, the VPC networking, and security, then you can create this group in a replicated way for fast deployment. We will set the clusters to a fargate as the intent is to use this as a brain, not a processor.
+5) Most importantly, when creating the service, a setting for security groups will exist as well as VPC and subnet. This must have a port 8080 open to your current device IP for security reasons and the VPC and subnet must be same as the EC2.
+6) Run the service, an IP will be provided. Go into the logs.
+7) Filter out the logs to search for a query that has `initialAdminPassword` as the line above that log line will have a string of characters, which will be needed to unlock and proceed set up with Jenkins.
+8) Log into the ECS through the public IP on port 8080. Add the password, install recommended, then Install Docker Pipeline and Amazon EC2 plug-in.
+9) Head into the agent/ndoe configures and connec the EC2 with the Jenkins. You can use the private IP for this as both settings should be on the same subnet.
+10) Create a mulitbranch pipeline with Github credentials and default on all settings.
+11) Let Jenkins scan the repo, then build now.
