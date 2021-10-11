@@ -19,8 +19,8 @@ pipeline {
       steps {
         sh '''
         var1=$( sudo docker images --filter 'dangling=true' --format "{{.ID}}" )
-        sudo docker tag $var1 deploy7
-        sudo docker push deploy7
+        sudo docker tag $var1 kentan404:deploy7repo
+        sudo docker push kentan404/deploy7repo:deploy7repo
         '''
       }
     }
