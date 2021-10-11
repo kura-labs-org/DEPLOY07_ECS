@@ -2,6 +2,7 @@ pipeline {
   agent { label 'agent1'}
   environment{
       DOCKERHUB_CREDENTIALS = credentials('kentan404-dockerhub')
+    
   }
   stages {
     stage ('Build') {
@@ -19,7 +20,7 @@ pipeline {
         sh '''
         var1=$( sudo docker images --filter 'dangling=true' --format "{{.ID}}" )
         sudo docker tag $var1 deploy7
-        sudo docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        
         sudo docker push deploy7
         '''
       }
