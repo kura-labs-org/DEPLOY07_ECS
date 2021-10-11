@@ -39,3 +39,6 @@ The last command will push your image to AWS.
   ```
 
 ### Create a Jenkins container on AWS
+
+1. Navigate to AWS ECS and choose Clusters to create a new Cluster, and choose networking only with the default VPC.
+2. 
