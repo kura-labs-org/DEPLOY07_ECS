@@ -7,20 +7,20 @@ pipeline {
   stages {
     stage ('Build') {
       steps {
-        sh 'sudo docker build -f dockerfile .'
+        sh 'docker build -f dockerfile .'
       }
     }
     stage ('Login') {
       steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
     stage ('Push') {
       steps {
         sh '''
-        var1=$( sudo docker images --filter 'dangling=true' --format "{{.ID}}" )
-        sudo docker tag $var1 kentan404:deploy7repo
-        sudo docker push kentan404:deploy7repo
+        var1=$( docker images --filter 'dangling=true' --format "{{.ID}}" )
+        docker tag $var1 kentan404:deploy7repo
+        docker push kentan404:deploy7repo
         '''
       }
     }
