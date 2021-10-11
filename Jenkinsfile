@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage ('Build') {
       steps {
-        sh 'docker build -t dockerfile .'
+        sh 'docker build -f dockerfile .'
       }
     }
     stage ('Login') {
