@@ -41,4 +41,5 @@ The last command will push your image to AWS.
 ### Create a Jenkins container on AWS
 
 1. Navigate to AWS ECS and choose Clusters to create a new Cluster, and choose networking only with the default VPC.
-2. 
+2. After your cluster is created go to the task section and create a new task definition.
+3. While creating your task definition link to the ECR repo where your jenkins image is hosted.
