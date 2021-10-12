@@ -22,6 +22,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
 ### Create the ECS Cluster
-1) On the ECS dashboard, crete a new repository.
-1) - asdf
+1) On the ECS dashboard, crete a new repository. 
+    - asdf
 3) 
