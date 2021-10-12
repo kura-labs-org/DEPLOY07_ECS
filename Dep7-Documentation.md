@@ -22,12 +22,32 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
 ### Create the ECS Cluster
-1) On the ECS dashboard, crete a new repository. 
+1) On the ECS dashboard, crete a new repository under ECR. 
     - Select **Public**, enter your repository name, click **Create Repository**.
-2) In your local terminal, get a Jenkins Docker image and push it to your repository.
+2) In your local terminal, get a Jenkins Docker image and push it to your ECR respoitory.
 ```
 docker pull jenkins/jenkins
 aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/repo-tag
 docker tag image-name:tag-name public.ecr.aws/repo-tag/repo-name:tag-name
 docker push public.ecr.aws/repo-tag/repo-name:tag-name
 ```
+3) Create a cluster.
+    - Select **Networking Only**, name the cluster, create the cluster.
+    - Next create a New Task Defintion. When creating the container use the image URI from our jenkins image we pushed earlier to ECR earlier.
+    - Assign the Task to the Cluster. When it is running, grab the public IP and access the container via port 8080.
+
+### Github
+Let's set up our github with three files: 
+1) The .jar file that holds the information to build our Java app.
+2) The Dockerfile that will build an image of our Java app.
+3) The Jenkinsfile that will run the Dockerfile and push our image to Dockerhub.
+
+### Jenkins
+1) Configure Jenkins. We need two plugins: `Docker Pipeline` and `AWS EC2`. 
+2) Once these are installed add an agent hosted by our EC2 (use private IP).
+3) Add credentials:
+    - We need to add Github login using the Personal Access Token as the password.
+    - We need to add Docker login using the Personal Access Token as the password.
+    - We need to add SSH login using the IP and .pem file for the agent EC2.
+4) Create a multi-branch pipeline that pulls from the repo you set up.
+5) Run it and check your Dockerhub to see if the Java app image has been uploaded.
