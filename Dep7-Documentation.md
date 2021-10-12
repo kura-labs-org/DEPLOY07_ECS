@@ -23,5 +23,11 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 ### Create the ECS Cluster
 1) On the ECS dashboard, crete a new repository. 
-    - asdf
-3) 
+    - Select **Public**, enter your repository name, click **Create Repository**.
+2) In your local terminal, get a Jenkins Docker image and push it to your repository.
+```
+docker pull jenkins/jenkins
+aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/repo-tag
+docker tag image-name:tag-name public.ecr.aws/repo-tag/repo-name:tag-name
+docker push public.ecr.aws/repo-tag/repo-name:tag-name
+```
