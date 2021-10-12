@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh 'sudo docker build -t java .'
+                sh 'docker build -t java .'
             }
         }
         stage ('Login') {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage ('Push') {
             steps {
-                sh 'sudo docker push bjones25/jenkins:tagname'
+                sh  'docker push bjones25/jenkins:tagname'
             }
         }
     }
