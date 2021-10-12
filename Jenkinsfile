@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh 'docker build -t java .'
+                sh 'docker build -t bjones25/jenkins:tagname .'
             }
         }
         stage ('Login') {
