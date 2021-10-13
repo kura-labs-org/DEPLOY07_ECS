@@ -42,4 +42,10 @@ The last command will push your image to AWS.
 
 1. Navigate to AWS ECS and choose Clusters to create a new Cluster, and choose networking only with the default VPC.
 2. After your cluster is created go to the task section and create a new task definition.
-3. While creating your task definition link to the ECR repo where your jenkins image is hosted.
+3. While creating your task definition link to the ECR repo where your jenkins image is hosted, and make sure to map port 8080.
+4. Once this new task is created navigate to your AWS cluster and run a new task with the task definition you just created.
+5. Once this new task is running (might take a couple minutes) look through the logs of the container for the initial admin password needed to login to jenkins.
+
+### Create an Ubuntu Agent
+1. Create a t2 micro Ubuntu EC2 instance, with Docker installed.
+2. This instance will be used as our agent to build on.
