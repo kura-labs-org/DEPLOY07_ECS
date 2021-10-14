@@ -4,7 +4,7 @@ pipeline {
     }
     
   environment {
-    DOCKERHUB_CREDENTIALS = credentials("la22")
+    DOCKERHUB_CREDENTIALS = credentials("la22-dockerhub")
 }
     stages {
         stage('Build') { 
