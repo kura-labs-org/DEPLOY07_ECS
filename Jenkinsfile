@@ -8,19 +8,19 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh 'docker build -f deploy7 .'
+                sh '''docker build -f demo .'''
                 
             }
         }
         stage ('Login') {
             steps {
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                sh '''echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'''
             
             }
         }
         stage ('Push') {
             steps {
-                sh 'docker push deploy7:latest'
+                sh '''docker push demo:latest'''
                 
             }
         }
