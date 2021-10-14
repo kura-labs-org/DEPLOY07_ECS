@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "James_Bond"}
+    agent { label 'James_Bond'}
     
     environment{
         DOCKERHUB_CREDENTIALS_USR = "juanforthepeople"
@@ -20,8 +20,7 @@ pipeline {
         }
         stage ('Push') {
             steps {
-                sh 'docker tag deploy7 juanforthepeople:javaapp'
-                sh 'docker push juanforthepeople:javaapp:latest'
+                sh 'docker push deploy7:latest'
                 
             }
         }
