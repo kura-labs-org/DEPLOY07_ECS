@@ -1,0 +1,140 @@
+Started by user admin
+Obtained Jenkinsfile from git https://github.com/TemporarySolace/DEPLOY07_ECS
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on ubuntu in /home/ubuntu/workspace/D7
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: git
+using credential 593ffd59-e967-4f77-8a5a-eaab88fa8caa
+Cloning the remote Git repository
+Cloning repository https://github.com/TemporarySolace/DEPLOY07_ECS
+ > git init /home/ubuntu/workspace/D7 # timeout=10
+Avoid second fetch
+Checking out Revision 1bb58046a7f44600ad3b15fb57421a4f8340d823 (refs/remotes/origin/main)
+Fetching upstream changes from https://github.com/TemporarySolace/DEPLOY07_ECS
+ > git --version # timeout=10
+ > git --version # 'git version 2.25.1'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/TemporarySolace/DEPLOY07_ECS +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/TemporarySolace/DEPLOY07_ECS # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 1bb58046a7f44600ad3b15fb57421a4f8340d823 # timeout=10
+Commit message: A
+First time build. Skipping changelog.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withCredentials
+Masking supported pattern matches of  or 
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] sh
++ docker build -t temporarysolace/deploy07 .
+Sending build context to Docker daemon  35.88MB
+
+Step 1/4 : from openjdk:11
+11: Pulling from library/openjdk
+df5590a8898b: Pulling fs layer
+705bb4cb554e: Pulling fs layer
+519df5fceacd: Pulling fs layer
+ccc287cbeddc: Pulling fs layer
+39a2961e8351: Pulling fs layer
+0287b7aa7f62: Pulling fs layer
+165d4a436d89: Pulling fs layer
+ccc287cbeddc: Waiting
+39a2961e8351: Waiting
+0287b7aa7f62: Waiting
+165d4a436d89: Waiting
+705bb4cb554e: Verifying Checksum
+705bb4cb554e: Download complete
+519df5fceacd: Verifying Checksum
+519df5fceacd: Download complete
+39a2961e8351: Verifying Checksum
+39a2961e8351: Download complete
+df5590a8898b: Verifying Checksum
+df5590a8898b: Download complete
+0287b7aa7f62: Verifying Checksum
+0287b7aa7f62: Download complete
+ccc287cbeddc: Verifying Checksum
+ccc287cbeddc: Download complete
+165d4a436d89: Verifying Checksum
+165d4a436d89: Download complete
+df5590a8898b: Pull complete
+705bb4cb554e: Pull complete
+519df5fceacd: Pull complete
+ccc287cbeddc: Pull complete
+39a2961e8351: Pull complete
+0287b7aa7f62: Pull complete
+165d4a436d89: Pull complete
+Digest: sha256:c558394afd1f8fdd16658c56655ca2808748561980011e45bf67873d72b1ad42
+Status: Downloaded newer image for openjdk:11
+ ---> 60a1f9a30555
+Step 2/4 : copy . /root
+ ---> 626650336ca1
+Step 3/4 : workdir '/root'
+ ---> Running in 3ea19ad265ea
+Removing intermediate container 3ea19ad265ea
+ ---> cfaeb32651a4
+Step 4/4 : entrypoint [java,-jar,demo.jar]
+ ---> Running in 95391898ea64
+Removing intermediate container 95391898ea64
+ ---> c793febe90f3
+Successfully built c793febe90f3
+Successfully tagged temporarysolace/deploy07:latest
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Login)
+[Pipeline] sh
++ docker login -u temporarysolace --password-stdin
++ echo ****
+WARNING! Your password will be stored unencrypted in /home/ubuntu/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Push)
+[Pipeline] sh
++ docker push temporarysolace/deploy07:latest
+The push refers to repository [docker.io/temporarysolace/deploy07]
+fa9808101383: Preparing
+874ad65f91ea: Preparing
+0fc2498b65e5: Preparing
+d08e6b97bf21: Preparing
+3054497613e6: Preparing
+d35dc7f4c79e: Preparing
+dabfe5b2ea81: Preparing
+5e6a409f30b6: Preparing
+d35dc7f4c79e: Waiting
+dabfe5b2ea81: Waiting
+5e6a409f30b6: Waiting
+3054497613e6: Mounted from library/openjdk
+0fc2498b65e5: Mounted from library/openjdk
+874ad65f91ea: Mounted from library/openjdk
+d08e6b97bf21: Mounted from library/openjdk
+dabfe5b2ea81: Mounted from library/openjdk
+d35dc7f4c79e: Mounted from library/openjdk
+5e6a409f30b6: Mounted from library/openjdk
+fa9808101383: Pushed
+latest: digest: sha256:404b2d3df1bf662258ad052020ebf70de0c0e32fef0918ba3f3a052378647603 size: 2007
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
