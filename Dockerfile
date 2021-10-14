@@ -1,5 +1,4 @@
 FROM openjdk:11
-ARG JAR_APP=target/*.jar
-WORKDIR /target
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+COPY . /usr/src/myapp
+WORKDIR "/usr/src/myapp"
+ENTRYPOINT ["java", "-jar", "demo-0.0.1-SNAPSHOT.jar"]
