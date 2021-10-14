@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh '''docker build -f demo .'''
+                sh '''docker build -f Dockerfile .'''
                 
             }
         }
@@ -20,7 +20,7 @@ pipeline {
         }
         stage ('Push') {
             steps {
-                sh '''docker push demo:latest'''
+                sh '''docker push Dockerfile:latest'''
                 
             }
         }
