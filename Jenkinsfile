@@ -23,7 +23,7 @@ pipeline {
         
         stage('Push'){
             steps {
-		sh 'docker tag javaimage:latest denzelgustave/javaapp:lastest'
+		sh 'docker tag javaimage:latest denzelgustave/javaapp:latest'
                 sh 'docker push denzelgustave/javaapp:latest'
                 sh 'echo "Push was successful"'
             }
