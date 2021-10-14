@@ -1,4 +1,5 @@
 FROM openjdk:11
-COPY . /usr/src/myapp
-WORKDIR "/usr/src/myapp"
+WORKDIR /
+COPY demo-0.0.1-SNAPSHOT.jar .
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "demo-0.0.1-SNAPSHOT.jar"]
