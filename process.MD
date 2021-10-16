@@ -67,8 +67,8 @@ docker run -d -p 5000:5000 flask-fake-news
 |:---------------------------|
 | Since it is being pushed to DockerHub, the server name does not have to be specified such as docker.io/iancdmitchell/flask-fake-news:latest     |
 
-- Push Docker image to my account on DockerHub
+- Pushed Docker image to my account on DockerHub
 ```python
-
+docker push iancdmitchell/flask-fake-news:latest
 ```
 ## Setting up the Kubernetes cluster
