@@ -134,10 +134,15 @@ spec:
 Load balancer uses port 8081. 
 Docker container/Kubernetes pod uses port 5000.     |
 
-
-- Ran the YAML file and then checked the list of containers. I then checked the status of the container that was just created.
+- Ran the YAML file and then checked the list of containers.
 ```python
 kubectl create -f fake-news.yml
 kubectl get all
+```
+- I then checked the status of the container that was just created. I had to wait until the status is RUNNING for both the service and the deployment.
+```python
 kubectl get pod
 ```
+- Once the status of both contniners is RUNNING, the application will be available at localhost:8081
+*Screenshot of Fake News app running on Kubernetes container on localhost on port 8081*
+![image](https://user-images.githubusercontent.com/5831590/137602081-73dfa723-3694-4438-948e-132a87e6fe0a.png)
