@@ -71,4 +71,15 @@ docker run -d -p 5000:5000 flask-fake-news
 ```python
 docker push iancdmitchell/flask-fake-news:latest
 ```
+| :warning: WARNING          |
+|:---------------------------|
+| Ensure that you are logged into DocherHub. Use "docker login". https://docs.docker.com/engine/reference/commandline/login/    |
+
 ## Setting up the Kubernetes cluster
+- Created Kubernetes cluster with a load balancer set up to be accessed via port 8081 and map to container on port 8080
+```python
+k3d cluster create -p "8081:8080@loadbalancer"
+```
+| :memo: TIP          |
+|:---------------------------|
+| If it fails because port 8080 is already in use, check the list of containers with "docker ps -a" and stop the other container with "docker stop CONTAINER_ID"     |
