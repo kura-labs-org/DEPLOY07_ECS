@@ -78,8 +78,66 @@ docker push iancdmitchell/flask-fake-news:latest
 ## Setting up the Kubernetes cluster
 - Created Kubernetes cluster with a load balancer set up to be accessed via port 8081 and map to container on port 8080
 ```python
-k3d cluster create -p "8081:8080@loadbalancer"
+k3d cluster create fake-news-cluster -p "8081:8080@loadbalancer"
 ```
 | :memo: TIP          |
 |:---------------------------|
 | If it fails because port 8080 is already in use, check the list of containers with "docker ps -a" and stop the other container with "docker stop CONTAINER_ID"     |
+
+k3d cluster list
+
+- Created YAML file inside flask_app_deployment directory and entered required values including port 5000 which is required for a Flask app and the path to the image on Dockerhub. The YAML file creates the *deployment* container first followed by the *load balancer service* container.
+```python
+nano fake-news.yml
+```
+*Contents of YAML file*
+```python
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fake-news-deployment
+spec:
+  selector:
+    matchLabels:
+      app: fake_news
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: fake_news
+    spec:
+      containers:
+      - name: fake-news-container
+        image: iancdmitchell/flask-fake-news:latest
+        ports:
+        - containerPort: 5000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: fake-news-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: fake_news
+
+```
+| :memo: NOTE          |
+|:---------------------------|
+| Kubernetes cluster uses port 8080. 
+Load balancer uses port 8081. 
+Docker container/Kubernetes pod uses port 5000.     |
+
+
+- Ran the YAML file and then checked the list of containers. I then checked the status of the container that was just created.
+```python
+kubectl create -f fake-news.yml
+kubectl get all
+kubectl get pod
+```
