@@ -54,5 +54,21 @@ docker run -d -p 5000:5000 flask-fake-news
 | Use "docker container exec -it CONTAINER_ID ls /" to browse the container     |
 
 
+## Pushing Docker image to DockerHub
+- Rebuilt and tagged Docker image with my DockerHub account username
+```python
+ docker build -t iancdmitchell/flask-fake-news:latest .
+```
+| :memo: TIP          |
+|:---------------------------|
+| It will rebuild the image using the cache of the previous build so it will be completed in seconds     |
 
+| :memo: TIP          |
+|:---------------------------|
+| Since it is being pushed to DockerHub, the server name does not have to be specified such as docker.io/iancdmitchell/flask-fake-news:latest     |
+
+- Push Docker image to my account on DockerHub
+```python
+
+```
 ## Setting up the Kubernetes cluster
