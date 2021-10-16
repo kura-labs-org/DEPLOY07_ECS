@@ -18,7 +18,7 @@ cp -r fake_news ~/flask_app_deployment
 cd ~/flask_app_deployment
 nano Dockerfile
 ```
-Contents of Dockerfile
+*Contents of Dockerfile*
 ```python
 FROM python:3.8
 RUN apt-get update -y && apt-get install -y python3-pip python3-dev
@@ -42,6 +42,17 @@ docker images
 ```
 docker run -d -p 5000:5000 flask-fake-news
 ``` 
+*Screenshot of Fake News app running on Docker container on localhost on port 5000*
+![image](https://user-images.githubusercontent.com/5831590/137570575-8e731669-af00-439e-b632-a213f173976b.png)
+
 | :memo: TIP          |
 |:---------------------------|
-| Use docker logs CONTAINER_ID to check the logs if there are 500 errors     |
+| Use "docker logs CONTAINER_ID" to check the logs if there are 500 errors     |
+
+| :memo: TIP          |
+|:---------------------------|
+| Use "docker container exec -it CONTAINER_ID ls /" to browse the container     |
+
+
+
+## Setting up the Kubernetes cluster
