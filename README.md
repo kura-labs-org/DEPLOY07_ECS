@@ -1,7 +1,7 @@
 # DEPLOY07_ECS
 <h1 align=center>Deployment 7</h1>
 
-👉Link to the [Documentation](https://github.com/ibrahima1289/deploy7).
+## 👉Link to the [Documentation](https://github.com/ibrahima1289/deploy7).
 
 Welcome to deployment 7, for this deployment you will need to follow directions in the deployment7.pdf.   
 
