@@ -1,14 +1,14 @@
 # Deployment 7 Documentation
 
 * [Task](#Task)
-* [Materials and Techonology Needed](#MaterialsandTechnologyNeeded)
+* [Materials](#Materials)
 * [Procedure](#Procedure)
 
 ## Task
 The objective of Deployment 7 is to
 <br>
 
-## Materials and Technology Needed
+## Materials
 * Computer (Local Host)
  * Docker installed on Computer
 
