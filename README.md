@@ -13,11 +13,10 @@ The objective of Deployment 7 is to
   * Docker installed on Computer
 
 * Have a Registered AWS Account to use the Following Services: 
- * EC2 (Elastic Compute Cloud)
+  * EC2 (Elastic Compute Cloud)
   * Docker installed on EC2
- 
- * ECS (Elastic Container Service) and Task Definition
-  * Create a Cluster using the ECS and Task Definition to access Jenkins from AWS
+  * ECS (Elastic Container Service) and Task Definition
+    * Create a Cluster using the ECS and Task Definition to access Jenkins from AWS
 
 
 <br>
