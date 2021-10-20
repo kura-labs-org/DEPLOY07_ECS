@@ -9,10 +9,11 @@ The objective of Deployment 7 is to
 <br>
 
 ## Materials and Technology Needed
-* Computer (Local Host) <br>
+* Computer (Local Host)
+* Docker installed on EC2
 * AWS Account 
 * EC2 (Elastic Compute Cloud)
-  * Docker
+  * Docker installed on EC2
 * ECS (Elastic Container Service)
 * Task Definition
 * Jenkins
