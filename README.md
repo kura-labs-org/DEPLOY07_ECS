@@ -1,6 +1,6 @@
 # Deployment 7 Documentation
 
-* [Task] (Task)
+* [Task] (#Task)
 [Materials / Technology] (#Materials / Technology)
 [Procedure] (#Procedure)
 
