@@ -5,7 +5,7 @@
 * [Procedure](#Procedure)
 
 ## Task
-The objective of Deployment 7 is to configure an Amazon Elastic Container Service to run a Java Application on Jenkins. Since ECS is being used, container supporting software must be used in this project. In this guide, Docker will be used. To create any Docker container, a Dockerfile is needed to instruct how a container is created. When using the Amazon Elastic Container Service, a cluster and task definition are neccessary to run an ECS. To use an ECS to access Jenkins, the cluster and task definition security ports must allow Jenkins to run on localhost:8080. 
+The objective of Deployment 7 is to configure an Amazon Elastic Container Service to run a Java Application on Jenkins. Since ECS is being used, container supporting software must be used in this project. In this guide, Docker will be used. To create any Docker container, a Dockerfile is needed to instruct how a container is created. When using the Amazon Elastic Container Service, a cluster and task definition are neccessary to run an ECS. To use an ECS to access Jenkins, the cluster and task definition security ports must be configured to allow Jenkins to run on localhost:8080. To run a Java application on Jenkins, version control software is needed to store the latest version of the application for Jenkins to access, read and execute the files. These files can be stored in a Github repository.   
 
 <br>
 
