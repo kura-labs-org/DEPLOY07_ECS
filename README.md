@@ -4,7 +4,7 @@
 * [Materials and Techonology Needed](#Materials_and_Technology_Needed)
 * [Procedure](#Procedure)
 
-## Task <br>
+## Task
 The objective of Deployment 7 is to
 <br>
 
