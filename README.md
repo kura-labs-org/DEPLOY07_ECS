@@ -10,7 +10,7 @@ The objective of Deployment 7 is to
 
 ## Materials
 * Computer (Local Host)
- * Docker installed on Computer
+* Docker installed on Computer
 
 * Have a Registered AWS Account to use the Following Services: 
  * EC2 (Elastic Compute Cloud)
