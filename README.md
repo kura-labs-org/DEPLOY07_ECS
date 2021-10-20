@@ -16,12 +16,16 @@ The objective of Deployment 7 is to configure an Amazon Elastic Container Servic
 
 * GitHub Account
   * Create a Repo to store and read project files
+  
+* Dockerhub Account
 
 * Have a Registered AWS Account to use the Following Services: 
-  * EC2 (Elastic Compute Cloud)
+  * EC2 (Elastic Compute Cloud) - This is the Agent
     * Docker installed on EC2
+    * Install Maven
   * ECS (Elastic Container Service) and Task Definition
     * Create a Cluster using and configuring ECS and Task Definition to access Jenkins from AWS
+  * ECR (Elastic Container Registry) 
 
 ## Procedure
 
@@ -40,4 +44,16 @@ Installing Docker:
 * sudo apt install docker-compose
 5. Make a Github Repository 
 6. In the Github repository, make a Dockerfile and Jenkinsfile. Also include java jar files. Refer to https://github.com/AndrewDass1/DEPLOY07_ECS for more details. 
-7. 
+7. Create a ECR
+8. Obtain a jenkins image to create a container. On your local computer, use the command docker pull jenkins/jenkins to obtain the image and then push it to the ECR
+9. Create a Task Definition, when asking for an image, paste the URI of the jenkins image you made and edit security group to 8080 to access Jenkins
+10. Create a ECS Cluster, choose the created task definition and allow port mapping 8080 
+11. In the ECS, go to logs and scroll in the logs to obtain the Jenkins password. The password is a bunch of numbers and letters that are randomly generated in one line.
+12. Go to your internet browser and type in localhost:8080 to access Jenkins. 
+13. Insert the password retrieved from AWS
+14. Install suggested plugins and make a Jenkins account. 
+15. Afterwards in Jenkins, install the suggested plugins: Docker Pipeline Plugin (should be installed already if not, install it) and AWS EC2 Plugin
+16. Make a new multibranch pipeline project in Jenkins, make sure to connect credentials in order for this project to read the Jenkinsfile and Dockerfile
+17. After making a new Jenkins project, go to Manage Nodes and Clouds
+18. Make a new agent and place that agent to be the Ubuntu EC2 we created
+19. Run the project in Jenkins and it should be successful
