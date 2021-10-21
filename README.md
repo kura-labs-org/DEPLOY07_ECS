@@ -2,7 +2,7 @@
 
 ## Steps to replicate
 
-### Build a Jenkins image and push that to AWS Elastic Container Registry (ECR)
+### Build a Jenkins image and push that image to AWS Elastic Container Registry (ECR)
 
 1. Create a Dockerfile to build a [Jenkins image](https://github.com/zachcyrus/jenkins_docker/tree/main/jenkins_container).
 
@@ -38,7 +38,7 @@ The last command will push your image to AWS.
   docker buildx build --platform linux/amd64 -t jenkins-image .
   ```
 
-### Create a Jenkins container on AWS
+### Launch a Jenkins container through AWS ECS
 
 1. Navigate to AWS ECS and choose Clusters to create a new Cluster, and choose networking only with the default VPC.
 2. After your cluster is created go to the task section and create a new task definition.
@@ -47,9 +47,24 @@ The last command will push your image to AWS.
 5. Once this new task is running (might take a couple minutes) look through the logs of the container for the initial admin password needed to login to jenkins.
 
 ### Create an Ubuntu Agent
-1. Create a t2 micro Ubuntu EC2 instance, with Docker installed.
+1. Create a t2 micro Ubuntu EC2 instance and ssh into that instance.
 2. This instance will be used as our agent to build on.
+3. For our use case we will install Docker using a convenience script.
+  ```
+ curl -fsSL https://get.docker.com -o get-docker.sh
+ sudo sh get-docker.sh
+ ```
 
+### Create an image to build to Java application
+
+1. Write a Dockerfile to build an image based on our Java application.
+   ```
+   FROM openjdk:11
+   COPY ./demo-0.0.1-SNAPSHOT.jar app.jar
+   CMD ["java","-jar","app.jar"]
+   
+   ```
+2. Save this Dockerfile in the repository of your target application.
 
 ### Run a CI/CD Pipeline with Jenkinsfile 
 1. Create a new pipeline job in Jenkins, which will read a Jenkinsfile from your Github repository of choice, and add necessary credentials.
@@ -95,5 +110,6 @@ The last command will push your image to AWS.
             sh 'docker logout'
         }
     }
-    }
-  ```
+    
+    ``` 
+
