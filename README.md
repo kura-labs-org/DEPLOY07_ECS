@@ -49,3 +49,51 @@ The last command will push your image to AWS.
 ### Create an Ubuntu Agent
 1. Create a t2 micro Ubuntu EC2 instance, with Docker installed.
 2. This instance will be used as our agent to build on.
+
+
+### Run a CI/CD Pipeline with Jenkinsfile 
+1. Create a new pipeline job in Jenkins, which will read a Jenkinsfile from your Github repository of choice, and add necessary credentials.
+2. Add a Jenkinsfile to your target repo with the following.
+   ```
+   pipeline {
+    agent {
+        label "Ubuntu"
+    }
+
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('DockerCredentials')
+    }
+
+    stages {
+        stage ('Build') {
+            steps {
+                sh '''
+                docker build -t zcyrus/spring-app .
+                '''
+            }
+        }
+
+        stage ('Login'){
+            steps {
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+
+        stage ('Push') {
+
+            steps{
+
+                sh 'docker push zcyrus/spring-app:latest'
+
+            }
+            
+        }
+    }
+
+    post {
+        always {
+            sh 'docker logout'
+        }
+    }
+    }
+  ```
