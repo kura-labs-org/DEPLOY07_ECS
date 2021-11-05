@@ -1,0 +1,5 @@
+1. Building an EC2  on a Public Subnet
+	1. Go to EC2 Instances click launch instance 
+	2. Choose Ubuntu AMI, t2.micro, Default VPC, Public Subnet, 8gib
+	3. Configure Security Group 22, 8080
+	4. SSH into EC2 
