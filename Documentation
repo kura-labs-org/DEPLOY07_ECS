@@ -34,4 +34,7 @@
 	5. Add a new container
 	6. Set port mapping to 8080
 	7. Go back to  your cluster you created and assign your Task, Run Task select fargate, Default  VPC, and same subnet as ec2, Custom TCP 8080,Save change.
-4. Jenkins Jenkins Jenkins :
+4. 4. Jenkins Jenkins Jenkins
+	1. Grab Public IP from Cluster
+	2. Paste in new tab  once Jenkins loads  go back to the task look in your logs to get the password to log in to jenkins
+	3. Once Logged in Install suggested plugins then go to manage Jenkins and install Docker pipeline and Amazon EC2 plugins
