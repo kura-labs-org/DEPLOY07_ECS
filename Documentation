@@ -3,3 +3,13 @@
 	2. Choose Ubuntu AMI, t2.micro, Default VPC, Public Subnet, 8gib
 	3. Configure Security Group 22, 8080
 	4. SSH into EC2 
+2. EC2 Requirements(Docker and AWS CLI 2) Run Commands in Order: 
+	1.  sudo apt-get update
+	2. sudo apt-get upgrade
+	3.  sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common
+	4. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	5. apt-cache madison docker-ce
+	6. sudo apt install docker.io
+	7. sudo apt install docker-compose
+	8. sudo usermod -a -G docker ubuntu
+	9. exit
