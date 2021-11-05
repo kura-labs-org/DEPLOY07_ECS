@@ -26,3 +26,12 @@
         20. sudo apt install openjdk-14-jdk
         21. Now we pull our Jenkins  images  from docker
         22. docker pull Jenkin/Jenkin
+3. Create a Cluster, ECR, Task :
+	1. In  AWS go to ECS then Create Cluster, Networking only
+	2. Next create a public ECR
+	3. Go in to your new ECR View Push Commands follow steps 1, 3 and 4.
+	4. Then create a Task Definition, Fargate
+	5. Add a new container
+	6. Set port mapping to 8080
+	7. Go back to  your cluster you created and assign your Task, Run Task select fargate, Default  VPC, and same subnet as ec2, Custom TCP 8080,Save change.
+4. Jenkins Jenkins Jenkins :
