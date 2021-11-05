@@ -13,3 +13,16 @@
 	7. sudo apt install docker-compose
 	8. sudo usermod -a -G docker ubuntu
 	9. exit
+	10. shh back in
+        11. Run  ($ docker images) to test if docker was installed successfully 
+        12. Next we install AWSCLI 2
+        13. curl “https://awscli.amazonaws.com/awscli-exe-linux-86_64.zip” -o “aws.cliv2.zip”
+        14. sudo apt-get install unzip
+        15. sudo unzip aws.cliv2.zip
+        16. sudo ./aws/install
+        17. To make sure you have the right version  Run ($ aws -version)
+        18. Next we connect to AWS RUN ($ aws configure) and fill. need information
+        19. sudo apt update
+        20. sudo apt install openjdk-14-jdk
+        21. Now we pull our Jenkins  images  from docker
+        22. docker pull Jenkin/Jenkin
