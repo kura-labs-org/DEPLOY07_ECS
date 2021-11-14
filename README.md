@@ -1,12 +1,11 @@
 # DEPLOY07_ECS
 <h1 align=center>Deployment 7</h1>
 
-Welcome to deployment 7, for this deployment you will need to follow directions in the deployment7.pdf.   
-
-👉Link to deployment instructions: [here](https://github.com/kura-labs-org/DEPLOY7_ECS/blob/main/Deployment%237.pdf)  
+Welcome to deployment 7!
 
 The goal of this deployment was to automate the dockerization of an application and to push it onto dockerhub to make it available. 
 
+👉Link to deployment instructions: [here](https://github.com/kura-labs-org/DEPLOY7_ECS/blob/main/Deployment%237.pdf)  
 
 ![image](https://devops4solutions.com/wp-content/uploads/2020/09/Dockerpublish.png)
 
