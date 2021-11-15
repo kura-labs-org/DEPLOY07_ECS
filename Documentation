@@ -1,0 +1,40 @@
+1. Building an EC2  on a Public Subnet
+	1. Go to EC2 Instances click launch instance 
+	2. Choose Ubuntu AMI, t2.micro, Default VPC, Public Subnet, 8gib
+	3. Configure Security Group 22, 8080
+	4. SSH into EC2 
+2. EC2 Requirements(Docker and AWS CLI 2) Run Commands in Order: 
+	1.  sudo apt-get update
+	2. sudo apt-get upgrade
+	3.  sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common
+	4. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	5. apt-cache madison docker-ce
+	6. sudo apt install docker.io
+	7. sudo apt install docker-compose
+	8. sudo usermod -a -G docker ubuntu
+	9. exit
+	10. shh back in
+        11. Run  ($ docker images) to test if docker was installed successfully 
+        12. Next we install AWSCLI 2
+        13. curl “https://awscli.amazonaws.com/awscli-exe-linux-86_64.zip” -o “aws.cliv2.zip”
+        14. sudo apt-get install unzip
+        15. sudo unzip aws.cliv2.zip
+        16. sudo ./aws/install
+        17. To make sure you have the right version  Run ($ aws -version)
+        18. Next we connect to AWS RUN ($ aws configure) and fill. need information
+        19. sudo apt update
+        20. sudo apt install openjdk-14-jdk
+        21. Now we pull our Jenkins  images  from docker
+        22. docker pull Jenkin/Jenkin
+3. Create a Cluster, ECR, Task :
+	1. In  AWS go to ECS then Create Cluster, Networking only
+	2. Next create a public ECR
+	3. Go in to your new ECR View Push Commands follow steps 1, 3 and 4.
+	4. Then create a Task Definition, Fargate
+	5. Add a new container
+	6. Set port mapping to 8080
+	7. Go back to  your cluster you created and assign your Task, Run Task select fargate, Default  VPC, and same subnet as ec2, Custom TCP 8080,Save change.
+4. 4. Jenkins Jenkins Jenkins
+	1. Grab Public IP from Cluster
+	2. Paste in new tab  once Jenkins loads  go back to the task look in your logs to get the password to log in to jenkins
+	3. Once Logged in Install suggested plugins then go to manage Jenkins and install Docker pipeline and Amazon EC2 plugins
