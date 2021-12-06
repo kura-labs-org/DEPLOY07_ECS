@@ -1,14 +1,9 @@
 # DEPLOY07_ECS
 <h1 align=center>Deployment 7</h1>
 
-Welcome to deployment 7, for this deployment you will need to follow directions in the deployment7.pdf.   
+![image](https://user-images.githubusercontent.com/16675605/144777422-7e6142b2-2a42-4256-8a49-945133b75993.png)
 
-- Be sure to include the following below in your pull request: 
+![image](https://user-images.githubusercontent.com/16675605/144777601-0b4f27a0-4744-4bfe-9ed6-40da111e5c54.png)
 
-***Requirements:*** 
-- [x]Document the process, issues and anything you decided to do differently.
-- [x]Add your Jenkinsfile and Dockerfile to the pull request.
+![image](https://user-images.githubusercontent.com/16675605/144777748-78068f68-0adc-4070-89b7-7d7ad256e7fa.png)
 
-👉Link to deployment instructions: [here](https://github.com/kura-labs-org/DEPLOY7_ECS/blob/main/Deployment%237.pdf)  
-
-![image](https://devops4solutions.com/wp-content/uploads/2020/09/Dockerpublish.png)
