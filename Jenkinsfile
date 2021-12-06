@@ -23,7 +23,7 @@ pipeline {
         
         stage('Push'){
             steps {
-                sh 'docker push syip11/javadem:latest'
+                sh 'docker push jodipie2021/javadem:latest'
                 sh 'echo "completed push"'
             }
         }
