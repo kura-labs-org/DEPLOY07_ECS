@@ -152,15 +152,14 @@ In ubuntu vm instance
 Within Jenkinsfile add commands 
 
 ```
-"docker build -t javaapp ."
-"docker tag javaapp:latest 32322323/javaapp"
-sh "docker push 32322323/javaapp:latest" ```
-  
+docker build -t javaapp .
+docker tag javaapp:latest 32322323/javaapp
+sh "docker push 32322323/javaapp:latest"
+ ```
+ 
  These commands allow for the Build to run successfully as well as the image to be pushed to DockerHub
                 
-![Screen Shot 2021-10-11 at 11 37 55 PM](https://user-images.githubusercontent.com/84725239/137375104-ea192c64-b822-4910-8e00-ba472fd5547b.png)
+
 ![Screen Shot 2021-10-14 at 2 30 17 PM](https://user-images.githubusercontent.com/84725239/137375458-30dbb911-362a-45c8-b702-d3ecba76e8ab.png)
 
-#Issues
 
-Test was broken to see how certain aspects of code work 
