@@ -1,11 +1,11 @@
 # DEPLOY07_ECS
-<h1 align=center>Deployment 7</h1>
+<h1 align=center>ECS deployment of Java container</h1>
 
-Welcome to deployment 7, for this deployment you will need to follow directions in the deployment7.pdf.   
 
-- Be sure to include the following below in your pull request: 
-
-***Requirements:*** 
+- create a container of jenkins
+- run the container inside of an ecs cluster
+- spin up an ec2 to use as a jenkins agent
+- In the jenkins 
 - [x]Document the process, issues and anything you decided to do differently.
 - [x]Add your Jenkinsfile and Dockerfile to the pull request.
 
