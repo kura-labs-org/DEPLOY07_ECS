@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh 'sudo docker buildx build --platform=linux/amd64 -t java .'
+                sh 'docker build -t bjones25/jenkins:tagname .'
             }
         }
         stage ('Login') {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage ('Push') {
             steps {
-                sh 'sudo docker push bjones25/jenkins:tagname'
+                sh  'docker push bjones25/jenkins:tagname'
             }
         }
     }
