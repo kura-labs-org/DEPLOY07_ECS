@@ -11,10 +11,10 @@ We have to
 
 
 Now we have to create a Dockerfile with the following:
-FROM openjdk:11
-COPY ./demo-0.0.1-SNAPSHOT.jar app.jar
-EXPOSE 8080
-CMD java -jar demo-0.0.1-SNAPSHOT.jar
+- FROM openjdk:11
+- COPY ./demo-0.0.1-SNAPSHOT.jar app.jar
+- EXPOSE 8080
+- CMD java -jar demo-0.0.1-SNAPSHOT.jar
 
 Now in AWS open Elastic Container Service and create a task definition for Jenkins
 
