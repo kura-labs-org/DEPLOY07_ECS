@@ -20,13 +20,13 @@ Now in AWS open Elastic Container Service and create a task definition for Jenki
 
 Then we go to ECS and create a networking only cluster and select Fargate, the serverless compute engine, which is one of AWS’ managed services.
 
-Create a new Pipeline and connect it to you Github Repo
+Create a new Pipeline and connect it to the corresponding Github repository
 
 Add the Jenkins file to the Github Repo that you will be using to create the image of the
-Java application, login and push to Docker Hub
+Java application, login and push to Dockerhub
 
-Generate an access token from Docker Hub and add it to the global credentials in
-Jenkins along with your Docker Hub username
+Generate an access token from Dockerhub and add it to the global credentials in
+Jenkins authenticate with your Dockerhub credentials
 
-Create an agent Node on Jenkins on which to run your build
+Create an agent Node on Jenkinsand use that in order to run your build.
 
