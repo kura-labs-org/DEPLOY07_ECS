@@ -5,7 +5,7 @@ ECS
 
 In this deployment we will be deploying on Elastic Container Service. Amazon ECS is a very versatile fully managed container orchestration service that makes it easy to deploy, manage and scale containerized applications.
 
-	First this Deployment calls for spinning up an Ubuntu EC2 but I decided to go with amazon Linux 2 instead. Mainly for the sake of speed and being more familiar with the way it works. 
+First this Deployment calls for spinning up an Ubuntu EC2 but I decided to go with amazon Linux 2 instead. Mainly for the sake of speed and being more familiar with the way it works. 
 
 We have to 
 
