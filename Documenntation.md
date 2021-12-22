@@ -30,4 +30,3 @@ Jenkins along with your Docker Hub username
 
 Create an agent Node on Jenkins on which to run your build
 
-![image](https://user-images.githubusercontent.com/9061503/147017120-25748afb-f59c-498c-8659-c8b4a4e209f8.png)
