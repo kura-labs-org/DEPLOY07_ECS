@@ -42,7 +42,7 @@ After creating a ubuntu instance, next it was time to enter terminal and go to t
 then ssh.
 
 ```
--ssh -i newkey.pem.txt ubuntu@(public ip address given)
+ssh -i newkey.pem.txt ubuntu@(public ip address given)
 ```
 
 * ECS
