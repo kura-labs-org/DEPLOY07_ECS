@@ -84,9 +84,9 @@ In image box get from repository the repository-url/image:tag (should look somet
 Port mappings
 - 8080 tcp
 
-After task definition is created use the Public ip and attach it to :8080 to get into jenkins.
+After the task definition is created use the Public IP and attach it to :8080 to get into Jenkins.
 
-The password is needed to access jenkins, it will be in the logs of the cluster.
+The password is needed to access Jenkins, it will be in the logs of the cluster.
 
 # Jenkins
 
@@ -94,13 +94,13 @@ The password is needed to access jenkins, it will be in the logs of the cluster.
 
 - AWS EC2 plugin
 
-Input Credentials For Docker, Ubuntu instance, and Github.Download recommended plugins and also download these plugins for this specific deployment.
+Input Credentials For Docker, Ubuntu instance, and Github. Download recommended plugins and also download these following plugins.
 
 
 ![Screen Shot 2021-10-11 at 11 41 09 PM](https://user-images.githubusercontent.com/84725239/137374956-e692f2be-2ee8-455c-b809-2982d43a2f25.png)
 
 
-Configure Jenkins agent, then a Multibranch Pipeline. After assigning label remember to add to label to jenkinsfile on github.
+Configure Jenkins agent, then a Multibranch Pipeline. After assigning label, remember to add to label to Jenkinsfile on GitHub.
 
 # Ubuntu
 
@@ -157,7 +157,7 @@ docker tag javaapp:latest 32322323/javaapp
 sh "docker push 32322323/javaapp:latest"
  ```
  
- These commands allow for the Build to run successfully as well as the image to be pushed to DockerHub
+ These commands allow for the Build to run successfully as well as the image to be pushed to DockerHub.
                 
 
 ![Screen Shot 2021-10-14 at 2 30 17 PM](https://user-images.githubusercontent.com/84725239/137375458-30dbb911-362a-45c8-b702-d3ecba76e8ab.png)
