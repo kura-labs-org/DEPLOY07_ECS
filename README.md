@@ -148,8 +148,8 @@ In ubuntu vm instance
  
 * Within the folder that contains the snapshot
 - Drag file to GitHub demo-0.0.1-SNAPSHOT.jar 
-* After assigning label given to agent in jenkins, add it to jenkinsfile on github
-Within Jenkinsfile add commands 
+* After assigning label given to agent in Jenkins, add it to Jenkinsfile on github
+and within Jenkinsfile add these commands 
 
 ```
 docker build -t javaapp .
